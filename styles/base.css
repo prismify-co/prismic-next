@@ -1,5 +1,7 @@
-html, body {
+html,
+body {
   height: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 #__next {
@@ -10,10 +12,13 @@ html, body {
   min-height: 100%;
 }
 
-#__next>main, #__next>.container {
+#__next > main,
+#__next > .container {
   flex-grow: 1;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   flex-shrink: 0;
 }
