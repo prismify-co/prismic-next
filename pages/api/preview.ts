@@ -3,9 +3,12 @@ import linkResolver from 'utils/link-resolver'
 
 export default async (req, res) => {
   const ref = req.query.token
-
+  const documentId = req.query.documentId
   // Check the token parameter against the Prismic SDK
-  const url = await PrismicClient.previewSession(ref, linkResolver, '/')
+  const url = await PrismicClient.getPreviewResolver(ref, documentId).resolve(
+    linkResolver,
+    '/'
+  )
 
   if (!url) {
     return res.status(401).json({ message: 'Invalid token' })
