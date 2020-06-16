@@ -15,9 +15,15 @@ export default function useAnalytics(trackingId: string) {
   }
 
   useEffect(() => {
-    if (navigator?.doNotTrack === '1') {
+    if (navigator?.doNotTrack === '1' || !window.gtag) {
       return
     }
+    window.gtag('js', new Date())
+    window.gtag('config', '${GA_TRACKING_ID}', {
+      page_path: window.location.pathname,
+    })
+    // Initialize GA
+    pageview(window.location.pathname)
     const handleRouteChange = (path) => {
       pageview(path)
     }
