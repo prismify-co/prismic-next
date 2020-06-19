@@ -19,7 +19,7 @@ export default function useAnalytics(trackingId: string) {
       return
     }
     window.gtag('js', new Date())
-    window.gtag('config', '${GA_TRACKING_ID}', {
+    window.gtag('config', trackingId, {
       page_path: window.location.pathname,
     })
     // Initialize GA
