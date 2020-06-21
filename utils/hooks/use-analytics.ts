@@ -18,16 +18,18 @@ export default function useAnalytics(trackingId: string) {
     if (navigator?.doNotTrack === '1' || !window.gtag) {
       return
     }
+    
     window.gtag('js', new Date())
-    window.gtag('config', trackingId, {
-      page_path: window.location.pathname,
-    })
+
     // Initialize GA
     pageview(window.location.pathname)
+    
     const handleRouteChange = (path) => {
       pageview(path)
     }
+    
     Router.events.on('routeChangeComplete', handleRouteChange)
+    
     return () => {
       Router.events.off('routeChangeComplete', handleRouteChange)
     }
