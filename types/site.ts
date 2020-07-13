@@ -59,3 +59,5 @@ export type SpacerSliceProps = IPrismicSlice<
     space?: string
   }
 >
+
+export type SliceProps = TextSliceProps | ImageSliceProps | SpacerSliceProps

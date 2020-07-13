@@ -28,7 +28,7 @@ export default function Home() {
       <header></header>
       <main>
         <Container className="container" py={5}>
-          {data?.page?.slices?.map(slicer)}
+          {slicer((data?.page?.slices as any) || [])}
         </Container>
       </main>
 
