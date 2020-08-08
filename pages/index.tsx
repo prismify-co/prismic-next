@@ -14,7 +14,7 @@ export default function Home() {
     },
   })
   if (error) {
-    console.log(error)
+    console.error(error)
   }
   if (loading) return null
   if (error) return null
