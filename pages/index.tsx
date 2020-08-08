@@ -3,7 +3,7 @@ import { pageQuery } from 'lib/graphql/queries/page'
 import { useQuery } from '@apollo/client'
 import { initApolloClient } from 'lib/graphql/apollo'
 import { PageProps } from 'types/site'
-import slicer from 'utils/slicer'
+import slicer from 'utils/prismic/slicer'
 import SmartLink from 'components/ui/smart-link'
 import { Container, Flex } from 'theme-ui'
 import Picture from 'components/ui/picture'
@@ -83,7 +83,7 @@ export async function getStaticProps({ preview = false, previewData }) {
     },
   })
   return {
-    unstable_revalidate: 60 * 60,
+    revalidate: 60 * 60,
     props: {
       initialApolloState: client.cache.extract(),
       page: data?.page ?? {},
