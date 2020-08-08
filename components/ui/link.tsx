@@ -25,7 +25,7 @@ const BaseLink = styled(ThemeUILink)(
   })
 )
 
-const Link = forwardRef<HTMLAnchorElement, LinkProps>(function (
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   { is = 'a', ...props }: LinkProps,
   ref
 ) {

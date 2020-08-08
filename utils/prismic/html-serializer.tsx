@@ -22,7 +22,7 @@ import Span from 'components/ui/span'
 // const Embed = dynamic(() => import('react-embed'))
 import Embed from 'react-embed'
 // -- HTML Serializer
-export default function (type, element, content, children, key) {
+export default function Seralizer(type, element, content, children, key) {
   var props: any = {}
   const unique = propsWithUniqueKey(props, key)
   switch (type) {
