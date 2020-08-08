@@ -5,7 +5,6 @@ import Spacer from 'components/slices/spacer'
 
 export default function slicer(slices: SliceProps[]) {
   return slices.map((slice, index) => {
-    console.log(slice.type)
     switch (slice.type) {
       case 'title':
         return (
@@ -39,7 +38,7 @@ export default function slicer(slices: SliceProps[]) {
 }
 
 /**
- * Uncomment this if you want to make sure the components render in "View page source".
+ * A dynamic version of slicer. However, this does not appear in "View page source".
  */
 
 // import dynamic from "next/dynamic"
