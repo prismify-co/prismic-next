@@ -1,10 +1,11 @@
-import { ThemeProvider } from "theme-ui"
-import { ApolloProvider } from "@apollo/client"
-import { useApollo } from "lib/graphql/apollo"
-import theme from "styles/theme"
+import { ThemeProvider } from 'theme-ui'
+import { ApolloProvider } from '@apollo/client'
+import { useApollo } from 'lib/graphql/apollo'
+import theme from 'styles/theme'
 
 // Styles
-import "styles/base.css"
+import 'styles/base.css'
+import 'tailwindcss/dist/base.min.css'
 
 function MyApp({ Component, pageProps }) {
   const client = useApollo(pageProps.initialApolloState)
