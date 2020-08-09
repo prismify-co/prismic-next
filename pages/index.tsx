@@ -7,6 +7,8 @@ import slicer from 'utils/prismic/slicer'
 import SmartLink from 'components/ui/smart-link'
 import { Container, Flex } from 'theme-ui'
 import Picture from 'components/ui/picture'
+import Button from 'components/ui/button'
+
 export default function Home() {
   const { data, loading, error } = useQuery<{ page: PageProps }>(pageQuery(), {
     variables: {
@@ -29,6 +31,9 @@ export default function Home() {
       <main>
         <Container className="container" py={5}>
           {slicer((data?.page?.slices as any) || [])}
+          <Button href="https://prismify.co/contact" target="__blank">
+            Contact
+          </Button>
         </Container>
       </main>
 
