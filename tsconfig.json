@@ -22,7 +22,11 @@
       "types/*": ["types/*"],
       "styles/*": ["styles/*"]
     },
-    "typeRoots": ["./node_modules/@prismify", "./node_modules/@types"]
+    "typeRoots": [
+      "./node_modules/@prismify",
+      "./node_modules/@types",
+      "./types"
+    ]
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
