@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import Picture, { PictureProps } from './picture'
-import { AvatarProps } from 'theme-ui'
+import { AvatarProps } from '@chakra-ui/core'
 type AvatarPictureProps = AvatarProps & PictureProps
 
 const AvatarPicture = forwardRef<HTMLPictureElement, AvatarPictureProps>(

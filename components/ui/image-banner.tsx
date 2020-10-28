@@ -1,5 +1,5 @@
 /**@jsx jsx */
-import { jsx, AspectRatio } from 'theme-ui'
+import { jsx, AspectRatio } from '@chakra-ui/core'
 import { forwardRef, Ref } from 'react'
 import Picture, { PictureProps } from './picture'
 
