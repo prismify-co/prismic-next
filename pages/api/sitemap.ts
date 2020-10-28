@@ -2,10 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { SitemapStream, streamToPromise, EnumChangefreq } from 'sitemap'
 import { createGzip } from 'zlib'
 import Prismic from 'prismic-javascript'
-import linkResolver from 'utils/link-resolver'
-import { PRISMIC_REPOSITORY_NAME } from 'lib/constants'
+import linkResolver from 'utils/prismic/link-resolver'
+import config from 'utils/prismic/config'
 
-const apiEndpoint = `https://${PRISMIC_REPOSITORY_NAME}.prismic.io/api/v2`
 // recursively fetch all pages
 function getPage(api, page, documents = []): Array<any> {
   return api
@@ -36,7 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const pipeline = stream.pipe(createGzip())
 
   return new Promise(async (resolve) => {
-    const api = await Prismic.getApi(apiEndpoint, { req })
+    const api = await Prismic.getApi(config.api, { req })
     const documents = await getPage(api, 1, [])
     try {
       documents.forEach((doc) => {
