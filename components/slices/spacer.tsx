@@ -1,10 +1,6 @@
-import { Box } from 'theme-ui'
+import { Box } from '@chakra-ui/core'
 import { SpacerSliceProps } from 'types/site'
 
 export default function SpacerSection(props: SpacerSliceProps) {
-  return (
-    <Box
-      sx={{ py: props?.primary?.space ? `${props?.primary?.space}` : 3 }}
-    />
-  )
+  return <Box py={props?.primary?.space ? `${props?.primary?.space}` : 3} />
 }
