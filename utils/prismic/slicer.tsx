@@ -1,11 +1,9 @@
 import { SliceProps } from 'types/site'
-import Text from 'components/slices/text'
-import Title from 'components/slices/title'
-import Spacer from 'components/slices/spacer'
+import { Title, Text, Spacer } from 'components/slices'
 
 export default function slicer(slices: SliceProps[]) {
   return slices.map((slice, index) => {
-    switch (slice.type) {
+    switch (slice.slice_type) {
       case 'title':
         return (
           <Title
