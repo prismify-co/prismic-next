@@ -1,10 +1,9 @@
-import { ImageSliceProps } from "types/site"
+import { ImageSliceProps } from 'types/site'
 
-import { Box } from "theme-ui"
-import linkParser from "utils/link-parser"
-import PrismicRichText from "components/prismic/prismic-rich-text"
-import Picture from "components/ui/picture"
-import SmartLink from "components/ui/smart-link"
+import { Box } from '@chakra-ui/core'
+import linkParser from 'utils/prismic/link-parser'
+import Picture from 'components/ui/picture'
+import SmartLink from 'components/ui/smart-link'
 
 export default function ImageSection(props: ImageSliceProps) {
   const { primary, label } = props
@@ -13,15 +12,15 @@ export default function ImageSection(props: ImageSliceProps) {
     <Picture
       src={image?.url}
       srcSets={[
-        { src: image?.sm?.url, media: "(max-width: 700px)" },
-        { src: image?.md?.url, media: "(max-width: 900px)" },
-        { src: image?.lg?.url, media: "(max-width: 1500px)" },
+        { src: image?.sm?.url, media: '(max-width: 700px)' },
+        { src: image?.md?.url, media: '(max-width: 900px)' },
+        { src: image?.lg?.url, media: '(max-width: 1500px)' },
       ]}
     />
   )
-  if (label === "with_link") {
+  if (label === 'with_link') {
     return (
-      <Box sx={{ maxWidth: "550px", width: "100%", mx: "auto", my: 4 }}>
+      <Box sx={{ maxWidth: '550px', width: '100%', mx: 'auto', my: 4 }}>
         <SmartLink variant="borderless" {...linkParser(image_link)}>
           {img}
         </SmartLink>
@@ -30,7 +29,7 @@ export default function ImageSection(props: ImageSliceProps) {
   }
 
   return (
-    <Box sx={{ maxWidth: "550px", width: "100%", mx: "auto", my: 4 }}>
+    <Box sx={{ maxWidth: '550px', width: '100%', mx: 'auto', my: 4 }}>
       {img}
     </Box>
   )
