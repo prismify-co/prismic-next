@@ -78,6 +78,11 @@ const theme = extendTheme({
         borderRadius: '0',
       },
     },
+    Link: {
+      baseStyle: {
+        color: 'blue.500',
+      },
+    },
   },
 })
 
