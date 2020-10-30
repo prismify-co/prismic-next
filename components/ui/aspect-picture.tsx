@@ -1,5 +1,5 @@
 import { PictureProps } from './picture'
-import { AspectRatioProps, AspectRatio } from 'theme-ui'
+import { AspectRatioProps, AspectRatio } from '@chakra-ui/core'
 import Picture from './picture'
 
 function AspectPicture({

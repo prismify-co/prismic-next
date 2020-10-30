@@ -1,26 +1,19 @@
 import React from 'react'
 import { Elements } from 'prismic-reactjs'
 import linkParser from './link-parser'
-import { Box, Flex } from 'theme-ui'
-/**@jsx jsx */
+import { Box, Flex } from '@chakra-ui/core'
 import { jsx, css } from '@emotion/core'
 // -- Function to add unique key to props
 const propsWithUniqueKey = function (props, key) {
   return Object.assign(props || {}, { key })
 }
-import dynamic from 'next/dynamic'
 import Heading from 'components/ui/heading'
 import Text from 'components/ui/text'
 import Picture from 'components/ui/picture'
 import SmartLink from 'components/ui/smart-link'
 import Span from 'components/ui/span'
-// const SmartLink = dynamic(() => import('components/ui/smart-link'))
-// const Text = dynamic(() => import('components/ui/text'))
-// const Picture = dynamic(() => import('components/ui/picture'))
-// const Heading = dynamic(() => import('components/ui/heading'))
-// const Span = dynamic(() => import('components/ui/span'))
-// const Embed = dynamic(() => import('react-embed'))
 import Embed from 'react-embed'
+
 // -- HTML Serializer
 export default function Seralizer(type, element, content, children, key) {
   var props: any = {}
@@ -36,13 +29,13 @@ export default function Seralizer(type, element, content, children, key) {
       return <Heading as="h3" variant="h3" {...{ children, ...unique }} />
 
     case Elements.heading4: // Heading 4
-      return <Heading as="h4" variant="h4" {...{ children, ...unique }} />
+      return <Heading as="h4" variant="subtitle" {...{ children, ...unique }} />
 
     case Elements.heading5: // Heading 5
-      return <Heading as="h5" variant="h5" {...{ children, ...unique }} />
+      return <Heading as="h5" {...{ children, ...unique }} />
 
     case Elements.heading6: // Heading 6
-      return <Heading as="h6" variant="h6" {...{ children, ...unique }} />
+      return <Heading as="h6" {...{ children, ...unique }} />
 
     case Elements.paragraph: // Paragraph
       return (

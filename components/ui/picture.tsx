@@ -1,4 +1,4 @@
-import { ImageProps as ThemeUIImageProps, Image } from 'theme-ui'
+import { ImageProps as ThemeUIImageProps, Image } from '@chakra-ui/core'
 import { forwardRef, Ref } from 'react'
 
 type ImageProps = Omit<ThemeUIImageProps, 'ref'> & { media?: string }

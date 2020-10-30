@@ -1,5 +1,5 @@
 import ImageBanner, { ImageBannerProps } from './image-banner'
-import { Container } from 'theme-ui'
+import { Container } from '@chakra-ui/core'
 import { ReactNode } from 'react'
 import Heading from './heading'
 import SmartLink from './smart-link'

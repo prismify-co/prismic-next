@@ -1,30 +1,30 @@
-import { Box } from 'theme-ui'
+import { Box } from '@chakra-ui/core'
 import styled from '@emotion/styled'
-import css from '@styled-system/css'
 
 const BaseSpan = (props) => <Box as="span" {...props} />
 
-const Span = styled(BaseSpan)(
-  css({
-    '&.capitalize': {
-      textTransform: 'capitalize',
-    },
-    '&.uppercase': {
-      textTransform: 'uppercase',
-    },
-    '&.lowercase': {
-      textTransform: 'lowercase',
-    },
-    '&.text-left': {
-      textAlign: 'left',
-    },
-    '&.text-right': {
-      textAlign: 'right',
-    },
-    '&.text-center': {
-      textAlign: 'center',
-    },
-  })
-)
+const Span = styled(BaseSpan)`
+  &.capitalize {
+    text-transform: capitalize;
+  }
+  &.uppercase {
+    text-transform: uppercase;
+  }
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.text-left {
+    text-transform: left;
+  }
+
+  &.text-right {
+    text-transform: right;
+  }
+
+  &.text-center {
+    text-transform: center;
+  }
+`
 
 export default Span

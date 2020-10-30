@@ -1,19 +1,14 @@
-import { ThemeProvider } from "theme-ui"
-import { ApolloProvider } from "@apollo/client"
-import { useApollo } from "lib/graphql/apollo"
-import theme from "styles/theme"
+import { ChakraProvider } from '@chakra-ui/core'
 
 // Styles
-import "styles/base.css"
+import 'styles/base.css'
+import theme from 'styles/theme'
 
 function MyApp({ Component, pageProps }) {
-  const client = useApollo(pageProps.initialApolloState)
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </ApolloProvider>
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
   )
 }
 

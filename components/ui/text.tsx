@@ -1,27 +1,28 @@
-// import { Text } from 'theme-ui'
+import { Text as ChakraText } from '@chakra-ui/core'
 import styled from '@emotion/styled'
-import css from '@styled-system/css'
 
-const Text = styled('p')(
-  css({
-    '&.capitalize': {
-      textTransform: 'capitalize',
-    },
-    '&.uppercase': {
-      textTransform: 'uppercase',
-    },
-    '&.lowercase': {
-      textTransform: 'lowercase',
-    },
-    '&.text-left': {
-      textAlign: 'left',
-    },
-    '&.text-right': {
-      textAlign: 'right',
-    },
-    '&.text-center': {
-      textAlign: 'center',
-    },
-  })
-)
+const Text = styled(ChakraText)`
+  &.capitalize {
+    text-transform: capitalize;
+  }
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.text-left {
+    text-transform: left;
+  }
+
+  &.text-right {
+    text-transform: right;
+  }
+
+  &.text-center {
+    text-transform: center;
+  }
+`
 export default Text
