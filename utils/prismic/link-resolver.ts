@@ -1,13 +1,23 @@
-import { PrismicDocument } from "types/site"
+type PrismicDocument = {
+  id: string
+  type: string
+  tags: string[]
+  slug: string
+  lang: string
+  uid: string
+  isBroken: boolean
+}
 
-export default function linkResolver(doc?: PrismicDocument) {
-  if (!doc || doc === null) return "#"
+function linkResolver(doc?: PrismicDocument) {
+  if (!doc || doc === null) return '#'
 
   switch (doc.type) {
-    case "page":
-      return "/"
-    // return doc.uid === "home" ? "/" : `/${doc.uid}`
+    case 'page':
+      // return "/"
+      return doc.uid === 'home' ? '/' : `/${doc.uid}`
     default:
-      return "#"
+      return '#'
   }
 }
+
+export default linkResolver

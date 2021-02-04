@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/react'
 import { SpacerSliceProps } from 'types/site'
 
 export default function SpacerSection(props: SpacerSliceProps) {

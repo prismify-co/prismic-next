@@ -1,4 +1,4 @@
-import { Text as ChakraText } from '@chakra-ui/core'
+import { Text as ChakraText } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const Text = styled(ChakraText)`

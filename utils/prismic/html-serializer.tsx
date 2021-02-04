@@ -1,18 +1,16 @@
 import React from 'react'
 import { Elements } from 'prismic-reactjs'
 import linkParser from './link-parser'
-import { Box, Flex } from '@chakra-ui/core'
-import { jsx, css } from '@emotion/core'
+import { Box, Flex, Heading, Link, Image } from '@chakra-ui/react'
+import { jsx, css } from '@emotion/react'
+import Text from 'components/ui/text'
 // -- Function to add unique key to props
 const propsWithUniqueKey = function (props, key) {
   return Object.assign(props || {}, { key })
 }
-import Heading from 'components/ui/heading'
-import Text from 'components/ui/text'
-import Picture from 'components/ui/picture'
-import SmartLink from 'components/ui/smart-link'
-import Span from 'components/ui/span'
+
 import Embed from 'react-embed'
+import Span from 'components/ui/span'
 
 // -- HTML Serializer
 export default function Seralizer(type, element, content, children, key) {
@@ -70,9 +68,9 @@ export default function Seralizer(type, element, content, children, key) {
       )
 
     case Elements.image: // Image
-      const link = linkParser(element?.linkTo?.url || element?.linkTo)
+      const link = linkParser(element?.linkTo?.url || element?.linkTo) as any
       const image = (
-        <Picture
+        <Image
           {...propsWithUniqueKey(props, key)}
           src={element.url}
           alt={element.alt}
@@ -97,9 +95,9 @@ export default function Seralizer(type, element, content, children, key) {
 
       return (
         <Flex sx={{ maxWidth: '550px', mx: 'auto', justifyContent: 'center' }}>
-          <SmartLink key={key} {...link} variant="borderless">
+          <Link key={key} {...link} variant="borderless">
             {image}
-          </SmartLink>
+          </Link>
         </Flex>
       )
 
@@ -129,9 +127,7 @@ export default function Seralizer(type, element, content, children, key) {
       if (!linkParser) {
         return null
       }
-      return (
-        <SmartLink {...{ children, ...unique, ...linkParser(element?.data) }} />
-      )
+      return <Link {...{ children, ...unique, ...linkParser(element?.data) }} />
 
     case Elements.label: // Label
       props = element.data
