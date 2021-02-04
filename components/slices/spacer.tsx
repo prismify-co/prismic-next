@@ -1,6 +1,11 @@
 import { Box } from '@chakra-ui/react'
-import { SpacerSliceProps } from 'types/site'
 
-export default function SpacerSection(props: SpacerSliceProps) {
+export type SpacerSectionProps = {
+  primary: {
+    space?: number
+  }
+}
+
+export default function SpacerSection(props: SpacerSectionProps) {
   return <Box py={props?.primary?.space ? `${props?.primary?.space}` : 3} />
 }

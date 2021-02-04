@@ -1,6 +1,11 @@
-import { TextSliceProps } from 'types/site'
 import PrismicRichText from 'components/prismic/prismic-rich-text'
 
-export default function TextSection({ primary }: TextSliceProps) {
+export type TextSectionProps = {
+  primary: {
+    text: IPrismicRichText
+  }
+}
+
+export default function TextSection({ primary }: TextSectionProps) {
   return <PrismicRichText text={primary?.text} />
 }

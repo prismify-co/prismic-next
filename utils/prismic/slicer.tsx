@@ -1,7 +1,10 @@
-import { SliceProps } from 'types/site'
 import { Title, Text, Spacer } from 'components/slices'
 
-export default function slicer(slices: SliceProps[]) {
+type Slice = {
+  slice_type: string
+}
+
+export default function slicer(slices: Slice[]) {
   return slices.map((slice, index) => {
     const props = { ...slice, key: `slice-${index}`, id: `slice-${index}` }
     switch (slice.slice_type) {

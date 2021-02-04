@@ -1,0 +1,1 @@
+import '@prismify/prismic-types'

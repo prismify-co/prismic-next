@@ -1,5 +1,10 @@
-import { TitleSliceProps } from 'types/site'
 import PrismicRichText from 'components/prismic/prismic-rich-text'
-export default function TitleSection({ primary }: TitleSliceProps) {
+
+export type TitleSectionProps = {
+  primary: {
+    title: IPrismicRichText
+  }
+}
+export default function TitleSection({ primary }: TitleSectionProps) {
   return <PrismicRichText text={primary?.title} />
 }
