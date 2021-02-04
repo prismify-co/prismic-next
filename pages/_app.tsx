@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 
 // Styles
 import 'styles/base.css'

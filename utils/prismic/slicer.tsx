@@ -3,35 +3,18 @@ import { Title, Text, Spacer } from 'components/slices'
 
 export default function slicer(slices: SliceProps[]) {
   return slices.map((slice, index) => {
+    const props = { ...slice, key: `slice-${index}`, id: `slice-${index}` }
     switch (slice.slice_type) {
       case 'title':
-        return (
-          <Title
-            {...(slice as any)}
-            key={`slice-${index}`}
-            id={`slice-${index}`}
-          />
-        )
+        return <Title {...(props as any)} />
       case 'text':
-        return (
-          <Text
-            {...(slice as any)}
-            key={`slice-${index}`}
-            id={`slice-${index}`}
-          />
-        )
+        return <Text {...(props as any)} />
       case 'spacer':
-        return (
-          <Spacer
-            {...(slice as any)}
-            key={`slice-${index}`}
-            id={`slice-${index}`}
-          />
-        )
+        return <Spacer {...(props as any)} />
       default:
         break
     }
-    return <></>
+    return undefined
   })
 }
 

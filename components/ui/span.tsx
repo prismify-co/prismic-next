@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const BaseSpan = (props) => <Box as="span" {...props} />

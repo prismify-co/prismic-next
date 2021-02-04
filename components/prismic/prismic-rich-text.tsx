@@ -1,7 +1,7 @@
 import { RichText } from 'prismic-reactjs'
-import Text from 'components/ui/text'
+import { TextProps } from '@chakra-ui/react'
 import serializer from 'utils/prismic/html-serializer'
-import { TextProps } from '@chakra-ui/core'
+import Text from 'components/ui/text'
 
 export type PrismicRichTextProps = TextProps & {
   text: IPrismicRichText

@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/core'
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   colors: {
@@ -27,6 +27,11 @@ const theme = extendTheme({
     },
   },
   components: {
+    Container: {
+      baseStyle: {
+        maxWidth: '3xl',
+      },
+    },
     Heading: {
       baseStyle: {
         fontWeight: 'bold',
